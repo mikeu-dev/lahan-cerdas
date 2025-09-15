@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('village_id')->nullable()->constrained()->cascadeOnDelete(); // opsional
             $table->foreignId('district_id')->nullable()->constrained()->cascadeOnDelete(); // opsional
             $table->geometry('geom', 'POINT', 4326)->nullable();
+            $table->json('properties')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->foreignId('updated_by')->nullable()->constrained('users');
             $table->timestamps();

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama_kecamatan', 100);
             $table->foreignId('regency_id')->constrained()->cascadeOnDelete();
             $table->geometry('geom', 'POLYGON', 4326)->nullable();
+            $table->json('properties')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->foreignId('updated_by')->nullable()->constrained('users');
             $table->timestamps();

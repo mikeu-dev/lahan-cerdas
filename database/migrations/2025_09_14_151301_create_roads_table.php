@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_jalan', 150)->nullable();
             $table->string('klasifikasi', 50)->nullable();
             $table->geometry('geom', 'LINESTRING', 4326)->nullable();
+            $table->json('properties')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->foreignId('updated_by')->nullable()->constrained('users');
             $table->timestamps();

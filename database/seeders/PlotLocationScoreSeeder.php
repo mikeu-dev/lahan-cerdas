@@ -15,6 +15,7 @@ class PlotLocationScoreSeeder extends Seeder
      */
     public function run(): void
     {
+
         $plots = LandPlot::all();
         $factors = LocationFactor::all();
 
@@ -23,12 +24,17 @@ class PlotLocationScoreSeeder extends Seeder
             return;
         }
 
-        foreach ($plots as $plot) {
-            foreach ($factors as $factor) {
-                // Skor acak 50-100 untuk realistis (bisa disesuaikan)
+        foreach ($factors as $factor) {
+            // Tentukan jumlah plot yang mendapat skor untuk faktor ini (misal 50%-100% plot)
+            $numPlots = rand((int)($plots->count() * 0.5), $plots->count());
+
+            // Ambil plot acak
+            $randomPlots = $plots->random($numPlots);
+
+            foreach ($randomPlots as $plot) {
+                // Skor acak 50-100
                 $score = rand(50, 100);
 
-                // Detail bisa berupa jarak / data POI / info tambahan
                 $detail = "Simulasi nilai untuk {$factor->name}";
 
                 PlotLocationScore::create([

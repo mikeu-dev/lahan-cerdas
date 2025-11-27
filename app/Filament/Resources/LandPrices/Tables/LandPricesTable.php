@@ -15,17 +15,18 @@ class LandPricesTable
     {
         return $table
             ->columns([
-                TextColumn::make('land_plot_id')
+                TextColumn::make('plot.title')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('source_id')
+                TextColumn::make('source.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('price_per_m2')
+                    ->searchable()
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('year')
-                    ->numeric()
+                    ->searchable()
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()

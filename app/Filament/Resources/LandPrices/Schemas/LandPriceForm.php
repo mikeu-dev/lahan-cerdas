@@ -22,8 +22,7 @@ class LandPriceForm
                     ->required()
                     ->numeric(),
                 TextInput::make('year')
-                    ->required()
-                    ->numeric(),
+                    ->required(),
                 Textarea::make('notes')
                     ->columnSpanFull(),
             ]);

@@ -17,8 +17,7 @@ class LandPriceInfolist
                     ->numeric(),
                 TextEntry::make('price_per_m2')
                     ->numeric(),
-                TextEntry::make('year')
-                    ->numeric(),
+                TextEntry::make('year'),
                 TextEntry::make('notes')
                     ->placeholder('-')
                     ->columnSpanFull(),

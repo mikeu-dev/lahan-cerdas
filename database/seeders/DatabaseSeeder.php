@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             LocationFactorSeeder::class,
             PlotLocationScoreSeeder::class,
             BusinessRecommendationSeeder::class,
+            InvestmentSimulationSeeder::class,
         ]);
     }
 }

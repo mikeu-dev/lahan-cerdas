@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('avg_price', 18, 2);
             $table->decimal('min_price', 18, 2);
             $table->decimal('max_price', 18, 2);
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

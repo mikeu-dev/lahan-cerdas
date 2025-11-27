@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             PriceHistorySeeder::class,
             LocationFactorSeeder::class,
             PlotLocationScoreSeeder::class,
+            BusinessRecommendationSeeder::class,
         ]);
     }
 }

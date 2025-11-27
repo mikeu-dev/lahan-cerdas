@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('plot_location_scores', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('land_plot_id')->constrained();
+            $table->foreignId('land_plot_id')->constrained('land_plots');
             $table->foreignId('factor_id')->constrained('location_factors');
             $table->float('score');
             $table->text('detail')->nullable();

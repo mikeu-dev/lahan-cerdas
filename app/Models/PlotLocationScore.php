@@ -13,7 +13,7 @@ class PlotLocationScore extends Model
 
     public function plot()
     {
-        return $this->belongsTo(LandPlot::class);
+        return $this->belongsTo(LandPlot::class, 'land_plot_id');
     }
     public function factor()
     {

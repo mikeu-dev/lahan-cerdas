@@ -11,9 +11,9 @@ class PlotLocationScoreInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('land_plot_id')
+                TextEntry::make('plot.title')
                     ->numeric(),
-                TextEntry::make('factor_id')
+                TextEntry::make('factor.name')
                     ->numeric(),
                 TextEntry::make('score')
                     ->numeric(),

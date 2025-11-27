@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             User::class,
             RegionSeeder::class,
             LandPlotSeeder::class,
+            LandPriceSourceSeeder::class,
+            LandPriceSeeder::class,
         ]);
     }
 }

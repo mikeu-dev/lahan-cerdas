@@ -46,4 +46,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function landPlots()
+    {
+        return $this->hasMany(LandPlot::class);
+    }
+    public function investments()
+    {
+        return $this->hasMany(InvestmentSimulation::class);
+    }
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 }

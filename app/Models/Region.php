@@ -22,6 +22,18 @@ class Region extends Model
 
     public function parent()
     {
-        return $this->belongsTo(Region::class);
+        return $this->belongsTo(Region::class, 'parent_id');
+    }
+    public function children()
+    {
+        return $this->hasMany(Region::class, 'parent_id');
+    }
+    public function landPlots()
+    {
+        return $this->hasMany(LandPlot::class);
+    }
+    public function priceHistory()
+    {
+        return $this->hasMany(PriceHistory::class);
     }
 }

@@ -15,6 +15,13 @@ class LocationFactorsTable
     {
         return $table
             ->columns([
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('category')
+                    ->searchable(),
+                TextColumn::make('weight')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

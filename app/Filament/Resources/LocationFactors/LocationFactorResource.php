@@ -26,6 +26,11 @@ class LocationFactorResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Location Factor';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Schema $schema): Schema
     {
         return LocationFactorForm::configure($schema);

@@ -15,9 +15,11 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class PlotLocationScoreResource extends Resource
 {
+    protected static string|UnitEnum|null $navigationGroup = 'Master';
     protected static ?string $model = PlotLocationScore::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

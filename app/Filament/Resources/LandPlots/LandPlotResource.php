@@ -11,6 +11,7 @@ use App\Filament\Resources\LandPlots\Schemas\LandPlotInfolist;
 use App\Filament\Resources\LandPlots\Tables\LandPlotsTable;
 use App\Models\LandPlot;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -18,12 +19,17 @@ use Filament\Tables\Table;
 
 class LandPlotResource extends Resource
 {
+    protected static string|UnitEnum|null $navigationGroup = 'Master';
     protected static ?string $model = LandPlot::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'Land Plot';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
     public static function form(Schema $schema): Schema
     {
         return LandPlotForm::configure($schema);

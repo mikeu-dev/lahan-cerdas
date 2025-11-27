@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             LandPriceSourceSeeder::class,
             LandPriceSeeder::class,
             PriceHistorySeeder::class,
+            LocationFactorSeeder::class,
+            PlotLocationScoreSeeder::class,
         ]);
     }
 }

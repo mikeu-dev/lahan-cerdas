@@ -19,7 +19,7 @@ class RegionSeeder extends Seeder
         // ============================
         $indonesia = Region::create([
             'user_id'   => 1,
-            'name'      => 'Indonesia',
+            'name'      => 'INDONESIA',
             'parent_id' => null,
         ]);
 

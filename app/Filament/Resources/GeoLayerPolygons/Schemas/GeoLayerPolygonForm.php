@@ -15,7 +15,10 @@ class GeoLayerPolygonForm
                 TextInput::make('layer_id')
                     ->required()
                     ->numeric(),
-                Textarea::make('geojson')
+                TextInput::make('display_name'),
+                TextInput::make('properties'),
+                TextInput::make('geometry_type'),
+                Textarea::make('geometry')
                     ->required()
                     ->columnSpanFull(),
             ]);

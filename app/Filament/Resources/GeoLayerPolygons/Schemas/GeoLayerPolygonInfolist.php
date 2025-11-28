@@ -13,7 +13,11 @@ class GeoLayerPolygonInfolist
             ->components([
                 TextEntry::make('layer_id')
                     ->numeric(),
-                TextEntry::make('geojson')
+                TextEntry::make('display_name')
+                    ->placeholder('-'),
+                TextEntry::make('geometry_type')
+                    ->placeholder('-'),
+                TextEntry::make('geometry')
                     ->columnSpanFull(),
                 TextEntry::make('created_at')
                     ->dateTime()

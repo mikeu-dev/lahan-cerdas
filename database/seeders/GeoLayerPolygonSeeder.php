@@ -4,15 +4,13 @@ namespace Database\Seeders;
 
 use App\Models\GeoLayer;
 use App\Models\GeoLayerPolygon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class GeoLayerPolygonSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Jalankan seeder.
      */
     public function run(): void
     {
@@ -25,12 +23,12 @@ class GeoLayerPolygonSeeder extends Seeder
 
         foreach ($layers as $layer) {
 
-            // File dicari otomatis berdasarkan nama layer (slug)
+            // Tentukan nama file berdasarkan slug nama layer
             $fileName = 'geo/' . str()->slug($layer->name) . '.json';
 
-            // gunakan disk 'seeder'
+            // Ambil dari disk 'seeder'
             if (!Storage::disk('seeder')->exists($fileName)) {
-                $this->command->warn("File GeoJSON tidak ditemukan untuk layer: {$layer->name} ({$fileName})");
+                $this->command->warn("File GeoJSON tidak ditemukan: {$fileName}");
                 continue;
             }
 
@@ -49,9 +47,26 @@ class GeoLayerPolygonSeeder extends Seeder
                     continue;
                 }
 
+                $geometry = $feature['geometry'];
+                $properties = $feature['properties'] ?? [];
+
+                // Tentukan nama tampilan otomatis
+                $displayName =
+                    $properties['name']
+                    ?? $properties['NAMOBJ']
+                    ?? $properties['WADMKD']
+                    ?? $properties['WADMKC']
+                    ?? $properties['WADMKK']
+                    ?? $properties['WADMPR']
+                    ?? $properties['WADMDS']
+                    ?? 'Fitur Tanpa Nama';
+
                 GeoLayerPolygon::create([
-                    'layer_id' => $layer->id,
-                    'geojson' => json_encode($feature),
+                    'layer_id'      => $layer->id,
+                    'display_name'  => $displayName,
+                    'properties'    => $properties,
+                    'geometry_type' => $geometry['type'] ?? null,
+                    'geometry'      => $geometry,
                 ]);
 
                 $count++;

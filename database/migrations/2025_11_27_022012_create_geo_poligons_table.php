@@ -13,8 +13,24 @@ return new class extends Migration
     {
         Schema::create('geo_layer_polygons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('layer_id')->constrained('geo_layers');
-            $table->longText('geojson');
+
+            // Relasi ke layer
+            $table->foreignId('layer_id')
+                ->constrained('geo_layers')
+                ->cascadeOnDelete();
+
+            // Nama / identitas feature (dibaca manusia)
+            $table->string('display_name')->nullable()->index();
+
+            // Properties dari feature
+            $table->json('properties')->nullable();
+
+            // Tipe geometry (Point, Polygon, MultiPolygon, LineString)
+            $table->string('geometry_type')->nullable();
+
+            // Geometry dalam format GeoJSON
+            $table->longText('geometry');
+
             $table->timestamps();
         });
     }

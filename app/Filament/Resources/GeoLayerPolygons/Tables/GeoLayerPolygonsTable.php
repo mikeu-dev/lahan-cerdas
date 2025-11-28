@@ -15,9 +15,12 @@ class GeoLayerPolygonsTable
     {
         return $table
             ->columns([
-                TextColumn::make('layer_id')
-                    ->numeric()
+                TextColumn::make('layer.name')
                     ->sortable(),
+                TextColumn::make('display_name')
+                    ->searchable(),
+                TextColumn::make('geometry_type')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

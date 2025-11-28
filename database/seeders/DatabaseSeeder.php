@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             PlotLocationScoreSeeder::class,
             BusinessRecommendationSeeder::class,
             InvestmentSimulationSeeder::class,
+            GeoLayerSeeder::class,
+            GeoLayerPolygonSeeder::class,
         ]);
     }
 }

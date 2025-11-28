@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('location_factors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('category', ['transport', 'facility', 'safety', 'economic']);
+            $table->float('weight')->default(1);
             $table->timestamps();
         });
     }

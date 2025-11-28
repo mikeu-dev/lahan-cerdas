@@ -15,6 +15,16 @@ class DatabaseSeeder extends Seeder
         $this->call([
             User::class,
             RegionSeeder::class,
+            LandPlotSeeder::class,
+            LandPriceSourceSeeder::class,
+            LandPriceSeeder::class,
+            PriceHistorySeeder::class,
+            LocationFactorSeeder::class,
+            PlotLocationScoreSeeder::class,
+            BusinessRecommendationSeeder::class,
+            InvestmentSimulationSeeder::class,
+            GeoLayerSeeder::class,
+            GeoLayerPolygonSeeder::class,
         ]);
     }
 }

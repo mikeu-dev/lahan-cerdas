@@ -15,11 +15,9 @@ class PlotLocationScoresTable
     {
         return $table
             ->columns([
-                TextColumn::make('land_plot_id')
-                    ->numeric()
+                TextColumn::make('plot.title')
                     ->sortable(),
-                TextColumn::make('factor_id')
-                    ->numeric()
+                TextColumn::make('factor.name')
                     ->sortable(),
                 TextColumn::make('score')
                     ->numeric()

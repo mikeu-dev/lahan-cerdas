@@ -11,6 +11,10 @@ class LocationFactorInfolist
     {
         return $schema
             ->components([
+                TextEntry::make('name'),
+                TextEntry::make('category'),
+                TextEntry::make('weight')
+                    ->numeric(),
                 TextEntry::make('created_at')
                     ->dateTime()
                     ->placeholder('-'),

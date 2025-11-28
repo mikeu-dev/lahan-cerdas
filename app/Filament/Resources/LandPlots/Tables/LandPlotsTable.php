@@ -15,10 +15,10 @@ class LandPlotsTable
     {
         return $table
             ->columns([
-                TextColumn::make('user_id')
+                TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('region_id')
+                TextColumn::make('region.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('title')

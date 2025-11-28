@@ -26,6 +26,11 @@ class RegionResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Region';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Schema $schema): Schema
     {
         return RegionForm::configure($schema);

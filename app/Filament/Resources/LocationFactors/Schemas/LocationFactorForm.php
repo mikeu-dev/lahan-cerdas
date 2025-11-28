@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\LocationFactors\Schemas;
 
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class LocationFactorForm
@@ -10,7 +11,14 @@ class LocationFactorForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('name')
+                    ->required(),
+                TextInput::make('category')
+                    ->required(),
+                TextInput::make('weight')
+                    ->required()
+                    ->numeric()
+                    ->default(1),
             ]);
     }
 }

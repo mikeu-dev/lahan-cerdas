@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('land_plot_id')->constrained();
             $table->foreignId('source_id')->constrained('land_price_sources');
             $table->decimal('price_per_m2', 18, 2);
-            $table->year('year');
+            $table->integer('year');
             $table->text('notes')->nullable();
             $table->timestamps();
         });

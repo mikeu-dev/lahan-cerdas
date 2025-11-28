@@ -15,8 +15,7 @@ class BusinessRecommendationsTable
     {
         return $table
             ->columns([
-                TextColumn::make('land_plot_id')
-                    ->numeric()
+                TextColumn::make('plot.title')
                     ->sortable(),
                 TextColumn::make('recommended_business')
                     ->searchable(),

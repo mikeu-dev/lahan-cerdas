@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class GeoLayerPolygonsTable
@@ -15,9 +16,12 @@ class GeoLayerPolygonsTable
     {
         return $table
             ->columns([
-                TextColumn::make('layer_id')
-                    ->numeric()
+                TextColumn::make('layer.name')
                     ->sortable(),
+                TextColumn::make('display_name')
+                    ->searchable(),
+                TextColumn::make('geometry_type')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -28,7 +32,15 @@ class GeoLayerPolygonsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('geometry_type')
+                    ->label('Jenis Geometri')
+                    ->options([
+                        'Polygon' => 'Polygon',
+                        'MultiPolygon' => 'MultiPolygon',
+                        'LineString' => 'LineString',
+                        'Point' => 'Point',
+                    ])
+                    ->searchable(),
             ])
             ->recordActions([
                 ViewAction::make(),

@@ -9,7 +9,7 @@ class PriceHistory extends Model
 {
     use HasFactory;
     protected $table = 'price_history';
-    protected $fillable = ['region_id', 'year', 'avg_price', 'min_price', 'max_price'];
+    protected $fillable = ['region_id', 'year', 'avg_price', 'min_price', 'max_price', 'notes'];
 
 
     public function region()

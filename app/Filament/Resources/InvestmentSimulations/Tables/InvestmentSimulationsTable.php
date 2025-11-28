@@ -15,10 +15,10 @@ class InvestmentSimulationsTable
     {
         return $table
             ->columns([
-                TextColumn::make('user_id')
+                TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('land_plot_id')
+                TextColumn::make('plot.title')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('purchase_price')

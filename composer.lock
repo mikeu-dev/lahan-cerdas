@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "caa69a8862fd9e6ca21bad7fb55330f2",
+    "content-hash": "8ec00f6db989207b2ef1ae579e4592d2",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5429,6 +5429,92 @@
                 }
             ],
             "time": "2025-02-21T14:16:57+00:00"
+        },
+        {
+            "name": "swisnl/filament-geometry",
+            "version": "0.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swisnl/filament-geometry.git",
+                "reference": "6762619b6907c245b2ffe03b3e1662453248847b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swisnl/filament-geometry/zipball/6762619b6907c245b2ffe03b3e1662453248847b",
+                "reference": "6762619b6907c245b2ffe03b3e1662453248847b",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "filament/forms": "^4.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.5",
+                "laravel/pint": "^1.14",
+                "matanyadaev/laravel-eloquent-spatial": "^4.5",
+                "nunomaduro/collision": "^8.1",
+                "orchestra/testbench": "^9.0|^10.0",
+                "pestphp/pest": "^3.0",
+                "pestphp/pest-plugin-arch": "^3.0",
+                "pestphp/pest-plugin-laravel": "^3.0",
+                "pestphp/pest-plugin-livewire": "^3.0",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0"
+            },
+            "suggest": {
+                "matanyadaev/laravel-eloquent-spatial": "Allows you to easily work with spatial data types and functions (^4.5)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Swis\\Filament\\Geometry\\FilamentGeometryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Swis\\Filament\\Geometry\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pjotr van der Horst",
+                    "email": "pvanderhorst@swis.nl",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jasper Zonneveld",
+                    "email": "jasper@swis.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Geometry form field for Filament PHP",
+            "homepage": "https://github.com/swisnl/filament-geometry",
+            "keywords": [
+                "filament-geometry",
+                "filamentphp",
+                "laravel",
+                "swisnl"
+            ],
+            "support": {
+                "issues": "https://github.com/swisnl/filament-geometry/issues",
+                "source": "https://github.com/swisnl/filament-geometry"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/swisnl",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-11-24T09:27:37+00:00"
         },
         {
             "name": "symfony/clock",

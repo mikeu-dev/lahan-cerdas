@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class GeoLayerPolygonsTable
@@ -31,7 +32,15 @@ class GeoLayerPolygonsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('geometry_type')
+                    ->label('Jenis Geometri')
+                    ->options([
+                        'Polygon' => 'Polygon',
+                        'MultiPolygon' => 'MultiPolygon',
+                        'LineString' => 'LineString',
+                        'Point' => 'Point',
+                    ])
+                    ->searchable(),
             ])
             ->recordActions([
                 ViewAction::make(),

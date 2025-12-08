@@ -59,8 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Favorite::class);
     }
-    public function notifications()
-    {
-        return $this->hasMany(Notification::class);
-    }
+    // Relationship removed to use Illuminate\Notifications\Notifiable logic
+    // public function notifications()
+    // {
+    //     return $this->hasMany(Notification::class);
+    // }
 }

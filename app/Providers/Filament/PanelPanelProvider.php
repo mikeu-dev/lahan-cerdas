@@ -28,6 +28,7 @@ class PanelPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            ->databaseNotifications()
             ->id('panel')
             ->path('panel')
             ->font('IBM Plex Mono', GoogleFontProvider::class)
